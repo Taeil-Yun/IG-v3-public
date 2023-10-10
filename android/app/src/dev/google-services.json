@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1015754652029",
+    "project_id": "dev-ig-public",
+    "storage_bucket": "dev-ig-public.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015754652029:android:6d0b4c44512203e4953414",
+        "android_client_info": {
+          "package_name": "biz.ig-public.www"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015754652029-osvapb2k4faqlcd62p5tdlhb8sp4jj0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "biz.ig-public.www",
+            "certificate_hash": "9822b7ba674d3ca8213624b1bbb8b1c82d6d6e92"
+          }
+        },
+        {
+          "client_id": "1015754652029-htf0r309r36v8cuc02fjgcfo88jf0gd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVq9puUQiFvjfWPCOME6djGtjxNHAFbLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015754652029-htf0r309r36v8cuc02fjgcfo88jf0gd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

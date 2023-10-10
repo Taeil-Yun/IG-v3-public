@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "11701135716",
+    "project_id": "ig-public-product",
+    "storage_bucket": "ig-public-product.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11701135716:android:0d93bb8ee5efdb7c82f271",
+        "android_client_info": {
+          "package_name": "com.ig-public.www"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11701135716-aot11obu1277jakrp855usnpcs8ehul0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ig-public.www",
+            "certificate_hash": "c59a2f9f7bf52c24629a6bef387393686bfc006f"
+          }
+        },
+        {
+          "client_id": "11701135716-fgf7f47o8o0elmaq9u0jqejlrvub111r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ig-public.www",
+            "certificate_hash": "e3f8e602dbb9ac87f4205719848ec2cc26b00ec0"
+          }
+        },
+        {
+          "client_id": "11701135716-mcebe8l6trbjk7jtj7mpe1le24h3gbik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ig-public.www",
+            "certificate_hash": "9822b7ba674d3ca8213624b1bbb8b1c82d6d6e92"
+          }
+        },
+        {
+          "client_id": "11701135716-msg6vinu16lros2fsdo8k281ubara22g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ig-public.www",
+            "certificate_hash": "254944b8f38b2a38b6d59a370010659453fe45fa"
+          }
+        },
+        {
+          "client_id": "11701135716-u63kaulgmp07qdqis3ra4gmhists9lc1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ig-public.www",
+            "certificate_hash": "04e756c23680f6156af03804e36066732e8fa81e"
+          }
+        },
+        {
+          "client_id": "11701135716-2eoliadlji747otup77u4a1i7merh7t2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWSf5ZVQKh4f2BitqjjDY8bIU1DTBghFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11701135716-2eoliadlji747otup77u4a1i7merh7t2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "11701135716-ua0hr44ia2tqih76ts4jmjll1ukvqlo8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.ig-public.www",
+                "app_store_id": "1363855876"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

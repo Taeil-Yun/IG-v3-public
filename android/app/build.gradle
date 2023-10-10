@@ -1,0 +1,150 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+def flutterCompileSdkVersion = localProperties.getProperty('flutter.compileSdkVersion')
+if (flutterCompileSdkVersion == null) {
+    flutterCompileSdkVersion = '33'
+}
+
+def flutterMinSdkVersion = localProperties.getProperty('flutter.minSdkVersion')
+if (flutterMinSdkVersion == null) {
+    flutterMinSdkVersion = '24'
+}
+
+def flutterTargetSdkVersion = localProperties.getProperty('flutter.targetSdkVersion')
+if (flutterTargetSdkVersion == null) {
+    flutterTargetSdkVersion = '31'
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
+
+def keystoreProperties = new Properties()
+   def keystorePropertiesFile = rootProject.file('key.properties')
+   if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
+
+android {
+    compileSdkVersion flutterCompileSdkVersion.toInteger()
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+        // Sets Java compatibility to Java 8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.ig-public.www"
+        minSdkVersion flutterMinSdkVersion.toInteger()
+        targetSdkVersion flutterTargetSdkVersion.toInteger()
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+       release {
+           storePassword='Entcrowd12@!ig-public'
+           keyPassword='Entcrowd12@!ig-public'
+           keyAlias='ig-public_key'
+           storeFile file('/Users/yuntaeil/ApplicationProjects/ig-public_v3/android/ig-public_key.jks')
+       }
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
+
+            
+        }
+        debug {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        dev {
+            dimension "app"
+            applicationId "biz.ig-public.www"
+            resValue "string", "app_name", "ig-public 개발"
+            resValue "string", "kakao_ad_track_id", "1668888481621034548"
+            resValue "string", "fb_login_protocol_scheme", "fb8483855315019396"
+            resValue "string", "facebook_client_token", "d46db161da63c9e8e0c7d2f36f1bf337"
+            resValue "string", "facebook_app_id", "8483855315019396"
+            resValue "string", "kakao_login", "afd1bc0a0902dcb4fddc22c85bed13f2"
+            resValue "string", "naver_client_id", "D2U3sVc3ZSYp5dBD74Q6"
+            resValue "string", "naver_client_secret", "MoGoJa7z_K"
+            resValue "string", "naver_client_name", "ig-public 개발"
+            resValue "string", "app_deep_link", "deeplink.ig-public.biz"
+        }
+        product {
+            dimension "app"
+            applicationId "com.ig-public.www"
+            resValue "string", "app_name", "ig-public"
+            resValue "string", "kakao_ad_track_id", "1668888481621034548"
+            resValue "string", "fb_login_protocol_scheme", "fb419501803127753"
+            resValue "string", "facebook_client_token", "390b75b83f6e2ba1e6b560728918ef5c"
+            resValue "string", "facebook_app_id", "419501803127753"
+            resValue "string", "kakao_login", "289edf95147349bd480666dd3e853888"
+            resValue "string", "naver_client_id", "vlyguvANdjt2i8xBT_yx"
+            resValue "string", "naver_client_secret", "L5c4YxMtEv"
+            resValue "string", "naver_client_name", "ig-public"
+            resValue "string", "app_deep_link", "a.ig-public.link/ig-publicappstore"
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:31.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window-java:1.0.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+}

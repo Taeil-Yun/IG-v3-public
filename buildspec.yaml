@@ -1,0 +1,42 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      # android: 30
+      java: corretto11
+    commands:
+      - pwd
+  pre_build:
+    commands:
+      - echo Pre Build started on `date`
+      - git clone https://github.com/flutter/flutter.git -b stable
+      - export PATH="$PATH:`pwd`/flutter/bin"
+      - flutter precache
+      - flutter doctor
+  build:
+    commands:
+      - echo Build started on `date`
+      - flutter build apk --flavor product
+      - echo -------------------------------------------------
+      # - flutter build apk --flavor dev
+      - ls -al
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  # files:
+  #   - '**.*'
+  # secondary-artifacts:
+  #   product-artifact:
+  #     # base-directory: build/app/outputs/apk/product/release/
+  #     files:
+  #       - build/app/outputs/flutter-apk/app-product-release.apk
+  #   dev-artifact:
+  #     # base-directory: build/app/outputs/apk/dev/release/
+  #     files:
+  #       - build/app/outputs/flutter-apk/app-dev-release.apk
+  files:
+  #   - build/app/outputs/flutter-apk/app-dev-release.apk
+    - build/app/outputs/flutter-apk/app-product-release.apk
